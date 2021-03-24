@@ -20,10 +20,11 @@
 
 <nav th:insert="fragments/navbar :: nav_fragment" />
 
-<div class="container p-3 my-3 bg-info text-white">
-   <h2>Control Panel Page</h2>
+<div class="container p-3 my-3 bg-light text-black-50">
+   
+   <h2>Product List</h2>
     <table class="table table-hover">
-        <thead>
+        <thead class="bg-dark text-white">
             <th th:text="#{product.id.label}"></th>
             <th th:text="#{product.name.label}"></th>
             <th th:text="#{product.price.label}"></th>
@@ -36,9 +37,15 @@
                 <td><span th:text="${productDto.id}"></span></td>
                 <td><span th:text="${productDto.name}"></span></td>
                 <td><span th:text="${productDto.price}"></span></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <a href="#" class="btn btn-info" th:href="@{/admin/product/find/{id} (id=${productDto.id})}" >Details</a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>

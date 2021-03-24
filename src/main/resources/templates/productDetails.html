@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Made by MOS</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav th:insert="fragments/navbar :: nav_fragment" />
+
+<div class="container p-3 my-3 bg-primary text-white">
+    Product Details
+    <table>
+        <thead>
+            <th th:text="#{product.id.label}"></th>
+            <th th:text="#{product.name.label}"></th>
+            <th th:text="#{product.price.label}"></th>
+            <th></th>
+        </thead>
+        <tbody>
+        <td><span th:text="${getProduct.id}"></span></td>
+        <td><span th:text="${getProduct.name}"></span></td>
+        <td><span th:text="${getProduct.price}"></span></td>
+            <td></td>
+        </tbody>
+    </table>
+</div>
+
+<footer th:insert="fragments/footer :: footer_fragment" />
+</body>
+</html>
