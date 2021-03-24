@@ -20,8 +20,28 @@
 
 <nav th:insert="fragments/navbar :: nav_fragment" />
 
-<div class="container p-3 my-3 bg-primary text-white">
-   Control Panel Page
+<div class="container p-3 my-3 bg-info text-white">
+   <h2>Control Panel Page</h2>
+    <table class="table table-hover">
+        <thead>
+            <th th:text="#{product.id.label}"></th>
+            <th th:text="#{product.name.label}"></th>
+            <th th:text="#{product.price.label}"></th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr th:each="productDto : ${productDtoList}">
+                <td><span th:text="${productDto.id}"></span></td>
+                <td><span th:text="${productDto.name}"></span></td>
+                <td><span th:text="${productDto.price}"></span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <footer th:insert="fragments/footer :: footer_fragment" />
