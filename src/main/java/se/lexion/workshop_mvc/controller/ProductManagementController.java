@@ -60,7 +60,7 @@ public class ProductManagementController {
 
         productDto2.setProductDetailsDto(productDetailsDto2);
 
-        productDtoList.add(productDto2);
+        productDtoList.add(productDto3);
     }
 
     @GetMapping("/")
